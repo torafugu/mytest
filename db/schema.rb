@@ -91,19 +91,6 @@ ActiveRecord::Schema.define(:version => 20130214223210) do
   add_index "lineups", ["game_id"], :name => "index_lineups_on_game_id"
   add_index "lineups", ["player_id"], :name => "index_lineups_on_player_id"
 
-# Could not dump table "member" because of following StandardError
-#   Unknown type '' for column 'id'
-
-  create_table "minimodelchildren", :force => true do |t|
-    t.text     "name"
-    t.text     "detail"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-# Could not dump table "minimodels" because of following StandardError
-#   Unknown type 'minimodelchilds' for column 'minimodelchilds'
-
   create_table "onecolumnmodels", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -178,9 +165,6 @@ ActiveRecord::Schema.define(:version => 20130214223210) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-# Could not dump table "team" because of following StandardError
-#   Unknown type '' for column 'id'
 
   create_table "todofukens", :force => true do |t|
     t.string   "name"
