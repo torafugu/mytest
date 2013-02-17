@@ -1,0 +1,28 @@
+<h1>Editing all ramen</h1>
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Price</th>
+  </tr>
+  <% for raman in @ramen %>
+    <tr>
+      <td>
+        <%= raman.id %>
+      </td>
+      <td>
+        <%= raman.name %>
+      </td>
+      <td>
+        <%= raman.price %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= form_tag :action => 'update_all' do %>
+<%= submit_tag "更新" %>
+<% end %>
+
+<%= link_to 'Back', edit_all_raman_path %>

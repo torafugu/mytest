@@ -1,0 +1,29 @@
+<h1>Editing all ramen</h1>
+
+<%= form_tag :action => 'confirm_all' do %>
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Price</th>
+  </tr>
+  <% for raman in @ramen %>
+    <tr>
+      <td>
+        <%= raman.id %>
+        <%= hidden_field_tag("ramen[][id]", raman.id) %>
+      </td>
+      <td>
+        <%= text_field_tag("ramen[][name]", raman.name) %>
+      </td>
+      <td>
+        <%= number_field_tag("ramen[][price]", raman.price) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<%= submit_tag "入力確認" %>
+<% end %>
+
+<%= link_to 'Back', ramen_path %>

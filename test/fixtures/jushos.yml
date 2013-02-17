@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  todofuken: 
+  shichoson: 
+  sonotajusho: MyString
+
+two:
+  todofuken: 
+  shichoson: 
+  sonotajusho: MyString

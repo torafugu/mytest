@@ -1,0 +1,25 @@
+<h1>Listing shichosons</h1>
+
+<table>
+  <tr>
+    <th>Todofuken</th>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @shichosons.each do |shichoson| %>
+  <tr>
+    <td><%= shichoson.todofuken.name %></td>
+    <td><%= shichoson.name %></td>
+    <td><%= link_to 'Show', shichoson %></td>
+    <td><%= link_to 'Edit', edit_shichoson_path(shichoson) %></td>
+    <td><%= link_to 'Destroy', shichoson, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Shichoson', new_shichoson_path %>

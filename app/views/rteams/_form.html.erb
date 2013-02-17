@@ -1,0 +1,25 @@
+<%= form_for(@rteam) do |f| %>
+  <% if @rteam.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rteam.errors.count, "error") %> prohibited this rteam from being saved:</h2>
+
+      <ul>
+      <% @rteam.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :rleague %><br />
+    <%= f.collection_select(:rleague_id, Rleague.find(:all), :id, :name) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

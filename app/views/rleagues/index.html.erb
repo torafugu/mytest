@@ -1,0 +1,23 @@
+<h1>Listing rleagues</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @rleagues.each do |rleague| %>
+  <tr>
+    <td><%= rleague.name %></td>
+    <td><%= link_to 'Show', rleague %></td>
+    <td><%= link_to 'Edit', edit_rleague_path(rleague) %></td>
+    <td><%= link_to 'Destroy', rleague, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Rleague', new_rleague_path %>

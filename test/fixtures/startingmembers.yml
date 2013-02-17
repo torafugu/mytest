@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  game_date: 2012-11-03
+
+two:
+  game_date: 2012-11-03

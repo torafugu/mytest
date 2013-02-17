@@ -1,0 +1,36 @@
+<%= form_for(@bestgame) do |f| %>
+  <% if @bestgame.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bestgame.errors.count, "error") %> prohibited this bestgame from being saved:</h2>
+
+      <ul>
+      <% @bestgame.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date, :use_month_numbers => true %>
+  </div>
+  <div class="field">
+    <table>
+      <tr><td align="center">
+        <%= f.label "Bench Lineups" %><br />
+        <%= f.select(:non_lineup_ids, @non_lineup_select_data, {}, {:multiple => true, :size => Player.all.size}) %>
+      </td><td>
+        <input id="btnMoveRight" type="button" value="->" onClick="moveItems('right')" />  
+        <br />  
+        <input id="btnMoveLeft" type="button" value="<-" onClick="moveItems('left')" />
+        </td><td align="center">
+        <%= f.label "Starting Lineups" %><br />
+        <%= f.select(:player_ids, @lineup_select_data, {}, {:multiple => true, :size => Player.all.size}) %>
+      </td></tr>
+      </table>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

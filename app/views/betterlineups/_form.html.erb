@@ -1,0 +1,25 @@
+<%= form_for(@betterlineup) do |f| %>
+  <% if @betterlineup.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@betterlineup.errors.count, "error") %> prohibited this betterlineup from being saved:</h2>
+
+      <ul>
+      <% @betterlineup.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :bettergame %><br />
+    <%= f.text_field :bettergame %>
+  </div>
+  <div class="field">
+    <%= f.label :player %><br />
+    <%= f.text_field :player %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Bestgame:</b>
+  <%= @bestlineup.bestgame %>
+</p>
+
+<p>
+  <b>Player:</b>
+  <%= @bestlineup.player %>
+</p>
+
+
+<%= link_to 'Edit', edit_bestlineup_path(@bestlineup) %> |
+<%= link_to 'Back', bestlineups_path %>

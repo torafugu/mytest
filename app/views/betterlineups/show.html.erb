@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Bettergame:</b>
+  <%= @betterlineup.bettergame %>
+</p>
+
+<p>
+  <b>Player:</b>
+  <%= @betterlineup.player %>
+</p>
+
+
+<%= link_to 'Edit', edit_betterlineup_path(@betterlineup) %> |
+<%= link_to 'Back', betterlineups_path %>

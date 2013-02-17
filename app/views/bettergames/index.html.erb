@@ -1,0 +1,23 @@
+<h1>Listing bettergames</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bettergames.each do |bettergame| %>
+  <tr>
+    <td><%= bettergame.date %></td>
+    <td><%= link_to 'Show', bettergame %></td>
+    <td><%= link_to 'Edit', edit_bettergame_path(bettergame) %></td>
+    <td><%= link_to 'Destroy', bettergame, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bettergame', new_bettergame_path %>

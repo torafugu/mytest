@@ -1,0 +1,27 @@
+<h1>Listing jushos</h1>
+
+<table>
+  <tr>
+    <th>Todofuken</th>
+    <th>Shichoson</th>
+    <th>Sonotajusho</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @jushos.each do |jusho| %>
+  <tr>
+    <td><%= jusho.todofuken %></td>
+    <td><%= jusho.shichoson %></td>
+    <td><%= jusho.sonotajusho %></td>
+    <td><%= link_to 'Show', jusho %></td>
+    <td><%= link_to 'Edit', edit_jusho_path(jusho) %></td>
+    <td><%= link_to 'Destroy', jusho, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Jusho', new_jusho_path %>

@@ -1,0 +1,23 @@
+<h1>Listing onecolumnmodels</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @onecolumnmodels.each do |onecolumnmodel| %>
+  <tr>
+    <td><%= onecolumnmodel.name %></td>
+    <td><%= link_to 'Show', onecolumnmodel %></td>
+    <td><%= link_to 'Edit', edit_onecolumnmodel_path(onecolumnmodel) %></td>
+    <td><%= link_to 'Destroy', onecolumnmodel, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Onecolumnmodel', new_onecolumnmodel_path %>

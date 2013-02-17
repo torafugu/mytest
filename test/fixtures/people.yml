@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  first_favfood_id: 1
+  second_favfood_id: 1
+  third_favfood_id: 1
+
+two:
+  name: MyString
+  first_favfood_id: 1
+  second_favfood_id: 1
+  third_favfood_id: 1

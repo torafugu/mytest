@@ -1,0 +1,23 @@
+<h1>Listing todofukens</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @todofukens.each do |todofuken| %>
+  <tr>
+    <td><%= todofuken.name %></td>
+    <td><%= link_to 'Show', todofuken %></td>
+    <td><%= link_to 'Edit', edit_todofuken_path(todofuken) %></td>
+    <td><%= link_to 'Destroy', todofuken, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Todofuken', new_todofuken_path %>

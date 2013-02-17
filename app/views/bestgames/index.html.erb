@@ -1,0 +1,23 @@
+<h1>Listing bestgames</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bestgames.each do |bestgame| %>
+  <tr>
+    <td><%= bestgame.date %></td>
+    <td><%= link_to 'Show', bestgame %></td>
+    <td><%= link_to 'Edit', edit_bestgame_path(bestgame) %></td>
+    <td><%= link_to 'Destroy', bestgame, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bestgame', new_bestgame_path %>

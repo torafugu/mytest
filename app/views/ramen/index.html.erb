@@ -1,0 +1,26 @@
+<h1>Listing ramen</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ramen.each do |raman| %>
+  <tr>
+    <td><%= raman.name %></td>
+    <td><%= raman.price %></td>
+    <td><%= link_to 'Show', raman %></td>
+    <td><%= link_to 'Edit', edit_raman_path(raman) %></td>
+    <td><%= link_to 'Destroy', raman, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Raman', new_raman_path %><br />
+<%= link_to 'Edit All Ramen', edit_all_raman_path %>

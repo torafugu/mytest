@@ -1,0 +1,24 @@
+<h1>Listing rmembers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Rteam</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @rmembers.each do |rmember| %>
+  <tr>
+    <td><%= rmember.name %></td>
+    <td><%= link_to 'Show', rmember %></td>
+    <td><%= link_to 'Edit', edit_rmember_path(rmember) %></td>
+    <td><%= link_to 'Destroy', rmember, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Rmember', new_rmember_path %>

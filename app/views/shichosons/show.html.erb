@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Todofuken:</b>
+  <%= @shichoson.todofuken.name %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @shichoson.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_shichoson_path(@shichoson) %> |
+<%= link_to 'Back', shichosons_path %>

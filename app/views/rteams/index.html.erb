@@ -1,0 +1,23 @@
+<h1>Listing rteams</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @rteams.each do |rteam| %>
+  <tr>
+    <td><%= rteam.name %></td>
+    <td><%= link_to 'Show', rteam %></td>
+    <td><%= link_to 'Edit', edit_rteam_path(rteam) %></td>
+    <td><%= link_to 'Destroy', rteam, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Rteam', new_rteam_path %>
