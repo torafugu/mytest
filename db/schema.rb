@@ -160,12 +160,6 @@ ActiveRecord::Schema.define(:version => 20130214223210) do
 
   add_index "shichosons", ["todofuken_id"], :name => "index_shichosons_on_todofuken_id"
 
-  create_table "startingmembers", :force => true do |t|
-    t.date     "game_date"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "todofukens", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false

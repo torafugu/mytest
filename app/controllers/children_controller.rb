@@ -64,8 +64,9 @@ class ChildrenController < ApplicationController
 
     respond_to do |format|
       if @child.update_attributes(params[:child])
-##        format.html { redirect_to @child, notice: 'Child was successfully updated.' }
-        format.html { redirect_to([@parent, @child]), notice: 'Child was successfully updated.' }        format.json { head :no_content }
+        format.html { redirect_to @child, notice: 'Child was successfully updated.' }
+#     format.html { redirect_to([@parent, @child]), notice: 'Child was successfully updated.' }
+        format.json { head :no_content }
       else
         format.html { render action: "edit" }
         format.json { render json: @child.errors, status: :unprocessable_entity }
@@ -76,7 +77,7 @@ class ChildrenController < ApplicationController
   # DELETE /children/1
   # DELETE /children/1.json
   def destroy
-##    @child = Child.find(params[:id])
+#    @child = Child.find(params[:id])
     @child = @parents.children.find(params[:id])
     @child.destroy
 
