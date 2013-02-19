@@ -1,0 +1,26 @@
+<h1>Listing imp_ramen</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @imp_ramen.each do |imp_raman| %>
+  <tr>
+    <td><%= imp_raman.name %></td>
+    <td><%= imp_raman.price %></td>
+    <td><%= link_to 'Show', imp_raman %></td>
+    <td><%= link_to 'Edit', edit_imp_raman_path(imp_raman) %></td>
+    <td><%= link_to 'Destroy', imp_raman, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Imp raman', new_imp_raman_path %><br />
+<%= link_to 'Edit All Ramen', edit_all_imp_raman_path %>

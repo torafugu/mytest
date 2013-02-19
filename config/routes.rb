@@ -1,5 +1,15 @@
 Mytest::Application.routes.draw do
 
+  match '/imp2_ramen/update_all' => 'imp2_ramen#update_all'
+  match '/imp2_ramen/confirm_all' => 'imp2_ramen#confirm_all'
+  match '/imp2_ramen/edit_all' => 'imp2_ramen#edit_all', as: 'edit_all_imp2_raman', :via => :get
+  resources :imp2_ramen
+
+  match '/imp_ramen/update_all' => 'imp_ramen#update_all'
+  match '/imp_ramen/confirm_all' => 'imp_ramen#confirm_all'
+  match '/imp_ramen/edit_all' => 'imp_ramen#edit_all', as: 'edit_all_imp_raman', :via => :get
+  resources :imp_ramen
+
   match '/ramen/update_all' => 'ramen#update_all'
   match '/ramen/confirm_all' => 'ramen#confirm_all'
   match '/ramen/edit_all' => 'ramen#edit_all', as: 'edit_all_raman', :via => :get

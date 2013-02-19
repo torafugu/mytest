@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130214223210) do
+ActiveRecord::Schema.define(:version => 20130219070558) do
 
   create_table "bestgames", :force => true do |t|
     t.date     "date"
@@ -70,6 +70,20 @@ ActiveRecord::Schema.define(:version => 20130214223210) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "imp2_ramen", :force => true do |t|
+    t.string   "name"
+    t.integer  "price"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "imp_ramen", :force => true do |t|
+    t.string   "name"
+    t.integer  "price"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "jushos", :force => true do |t|
     t.integer  "todofuken_id"
     t.integer  "shichoson_id"
@@ -90,6 +104,19 @@ ActiveRecord::Schema.define(:version => 20130214223210) do
 
   add_index "lineups", ["game_id"], :name => "index_lineups_on_game_id"
   add_index "lineups", ["player_id"], :name => "index_lineups_on_player_id"
+
+# Could not dump table "member" because of following StandardError
+#   Unknown type '' for column 'id'
+
+  create_table "minimodelchildren", :force => true do |t|
+    t.text     "name"
+    t.text     "detail"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+# Could not dump table "minimodels" because of following StandardError
+#   Unknown type 'minimodelchilds' for column 'minimodelchilds'
 
   create_table "onecolumnmodels", :force => true do |t|
     t.string   "name"
@@ -159,6 +186,15 @@ ActiveRecord::Schema.define(:version => 20130214223210) do
   end
 
   add_index "shichosons", ["todofuken_id"], :name => "index_shichosons_on_todofuken_id"
+
+  create_table "startingmembers", :force => true do |t|
+    t.date     "game_date"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+# Could not dump table "team" because of following StandardError
+#   Unknown type '' for column 'id'
 
   create_table "todofukens", :force => true do |t|
     t.string   "name"

@@ -1,0 +1,29 @@
+<h1>Editing all imp_ramen</h1>
+
+<%= form_tag :action => 'confirm_all' do %>
+
+<table border="1">
+  <tr>
+    <th>削除</th>
+    <th>Name</th>
+    <th>Price</th>
+  </tr>
+  <% for imp_raman in @imp_ramen %>
+    <tr>
+      <td>
+        <%= hidden_field_tag("imp_ramen[][id]", imp_raman.id) %>
+        <%= check_box_tag("imp_ramen[][delete_check]", true, imp_raman.delete_check) %>
+      </td>
+      <td>
+        <%= text_field_tag("imp_ramen[][name]", imp_raman.name) %>
+      </td>
+      <td>
+        <%= number_field_tag("imp_ramen[][price]", imp_raman.price) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<%= submit_tag "入力確認" %>
+<% end %>
+
+<%= link_to 'Back', imp_ramen_path %>
