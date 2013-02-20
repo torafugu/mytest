@@ -1,0 +1,36 @@
+<h1>Editing all imp2_ramen</h1>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>新規/削除</th>
+      <th>Name</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% for imp2_raman in @imp2_ramen %>
+    <tr>
+      <td>
+        <% if imp2_raman.delete_check %>
+          <%= '削除' %>
+        <% elsif imp2_raman.id.blank? %>
+          <%= '新規' %>
+        <% end %>
+      </td>
+      <td>
+        <%= imp2_raman.name %>
+      </td>
+      <td>
+        <%= imp2_raman.price %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= form_tag :action => 'update_all' do %>
+<%= submit_tag "更新" %>
+<% end %>
+
+<%= link_to 'Back', edit_all_imp2_raman_path %>
