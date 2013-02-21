@@ -122,5 +122,8 @@ class Imp2RamenController < ApplicationController
 
   # GET /imp2_ramen/add_row
   def add_row
+    respond_to do |format|
+      format.js { render :layout => false }
+    end
   end
 end
