@@ -1,5 +1,11 @@
 Mytest::Application.routes.draw do
 
+  resources :toriaezus
+
+  resources :douro_fusetsus
+
+  resources :douros
+
   match '/imp2_ramen/add_row' => 'imp2_ramen#add_row'
   match '/imp2_ramen/update_all' => 'imp2_ramen#update_all'
   match '/imp2_ramen/confirm_all' => 'imp2_ramen#confirm_all'

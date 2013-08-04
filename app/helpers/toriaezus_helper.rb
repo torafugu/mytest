@@ -1,0 +1,2 @@
+module ToriaezusHelper
+end

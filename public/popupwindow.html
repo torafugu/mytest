@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript">
+  $(function()
+  {
+    $("#popupwindow1").click(function(){
+      alert("こんにちは！");
+      return false;
+    });
+
+    $("#popupwindow2").click(function(){
+      window.open(this.href,"WindowName","width=300,height=300");
+      return false;
+    });
+
+    $("#popupwindow3").click(function(){
+      $('#popuowindow_message').text("こんにちは！");
+      $('#popupwindow').css({top: 20, left: 20}).fadeIn(100);
+      $('#popupwidow_close').click(function() {$('#popupwindow').fadeOut(100);});
+      return false;
+    });
+  });
+  </script>
+  <style>
+  #popupwindow {
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #000;
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    display: none;
+    z-index: 9999;
+  }
+
+  #popupwidow_close {
+    padding: 3px;
+    border: 1px solid #000;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    left: 85%;
+    top: 70%;
+  }
+  </style>
+</head>
+<body>
+  <p><a href="http://example.com/" id="popupwindow1">alertで表示</a></p>
+  <p><a href="http://example.com/" id="popupwindow2">window.openで表示</a></p>
+  <p><a href="http://example.com/" id="popupwindow3">popup windowで表示</a></p>
+  <div id="popupwindow">
+    <div id="popuowindow_message"></div>
+    <div id="popupwidow_close">OK</div>
+  </div>
+</body>
+</html>

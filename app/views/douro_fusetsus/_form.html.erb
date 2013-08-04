@@ -1,0 +1,29 @@
+<%= form_for(@douro_fusetsu) do |f| %>
+  <% if @douro_fusetsu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@douro_fusetsu.errors.count, "error") %> prohibited this douro_fusetsu from being saved:</h2>
+
+      <ul>
+      <% @douro_fusetsu.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :shichoson %><br />
+    <%= collection_select("help", "todofuken_id", Todofuken.find(:all), :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :shichoson %><br />
+    <%= f.collection_select(:shichoson_id, Shichoson.find(:all), :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :douro %><br />
+    <%= f.collection_select(:douro_id, Douro.find(:all), :id, :name) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

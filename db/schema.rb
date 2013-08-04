@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130219070558) do
+ActiveRecord::Schema.define(:version => 20130804012518) do
 
   create_table "bestgames", :force => true do |t|
     t.date     "date"
@@ -53,6 +53,22 @@ ActiveRecord::Schema.define(:version => 20130219070558) do
     t.integer  "parent_id"
   end
 
+  create_table "douro_fusetsus", :force => true do |t|
+    t.integer  "shichoson_id"
+    t.integer  "douro_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "douro_fusetsus", ["douro_id"], :name => "index_douro_fusetsus_on_douro_id"
+  add_index "douro_fusetsus", ["shichoson_id"], :name => "index_douro_fusetsus_on_shichoson_id"
+
+  create_table "douros", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "foods", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -69,6 +85,15 @@ ActiveRecord::Schema.define(:version => 20130219070558) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "ikuras", :force => true do |t|
+    t.integer  "shake_id"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "ikuras", ["shake_id"], :name => "index_ikuras_on_shake_id"
 
   create_table "imp2_ramen", :force => true do |t|
     t.string   "name"
@@ -178,6 +203,12 @@ ActiveRecord::Schema.define(:version => 20130219070558) do
 
   add_index "rteams", ["rleague_id"], :name => "index_rteams_on_rleague_id"
 
+  create_table "shakes", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "shichosons", :force => true do |t|
     t.integer  "todofuken_id"
     t.string   "name"
@@ -200,6 +231,13 @@ ActiveRecord::Schema.define(:version => 20130219070558) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "toriaezus", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end
