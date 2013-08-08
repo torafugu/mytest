@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130804012518) do
+ActiveRecord::Schema.define(:version => 20130808220129) do
 
   create_table "bestgames", :force => true do |t|
     t.date     "date"
@@ -120,6 +120,21 @@ ActiveRecord::Schema.define(:version => 20130804012518) do
   add_index "jushos", ["shichoson_id"], :name => "index_jushos_on_shichoson_id"
   add_index "jushos", ["todofuken_id"], :name => "index_jushos_on_todofuken_id"
 
+  create_table "kouins", :force => true do |t|
+    t.integer  "koujou_id"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "kouins", ["koujou_id"], :name => "index_kouins_on_koujou_id"
+
+  create_table "koujous", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "lineups", :force => true do |t|
     t.integer  "game_id"
     t.integer  "player_id"
@@ -202,6 +217,15 @@ ActiveRecord::Schema.define(:version => 20130804012518) do
   end
 
   add_index "rteams", ["rleague_id"], :name => "index_rteams_on_rleague_id"
+
+  create_table "seihins", :force => true do |t|
+    t.integer  "koujou_id"
+    t.integer  "seihin_num"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "seihins", ["koujou_id"], :name => "index_seihins_on_koujou_id"
 
   create_table "shakes", :force => true do |t|
     t.string   "name"
